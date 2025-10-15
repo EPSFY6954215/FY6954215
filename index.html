@@ -184,70 +184,26 @@ Table 1: Data on cost and lifespan of bridge repairs
   
   </p>
 
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
- <title>Change Button Colour</title>
+    <title>Alert Input text</title>
 </head>
 <body>
- <button id="colorButton">Click me to change colour</button>
- <script>
- // Get a reference to the button element
- var button = document.getElementById("colorButton");
- // Function to change the button color
- function changeColor() {
- // Generate a random color (hexadecimal)
- var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
- 
- // Set the button's background color to the random color
- button.style.backgroundColor = randomColor;
- }
- // Add a click event listener to the button
- button.addEventListener("click", changeColor);
- </script>
-</body>
-</html>
+    <input type="text" id="textInput" placeholder="enter text">
+    <button id="alertButton">Show Alert</button>
 
-<!Consolidation task 1>
+    <script>
+        var input = document.getElementById("textInput");
+        var button = document.getElementById("alertButton");
 
-<title>webpage with text imput field and a button</title>
+        function showAlert() {
+            var inputText = input.value;
+            alert("you entered: " + inputText);
+        }
 
-</head>
-<body>
-  <button id="userbutton">Click me</button>
-    //Code for alert box
-    <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    This is an alert box.
-  </div
-    /* The alert message box */
-  .alert {
-    padding: 20px;
-    background-color: #f44336; /* Red */
-    color: white;
-    margin-bottom: 15px;
-  
-  /* The close button */
-  .closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-
-  /* When moving the mouse over the close button */
-  .closebtn:hover {
-    color: black;
-  }
-
-
-
-
-
-  
+        button.addEventListener("click", showAlert);      
+    </script>
 </body>
 </html>
 
