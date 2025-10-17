@@ -205,40 +205,40 @@ var data = google.visualization.arrayToDataTable([
 [‘Exercise’, 2]
 ]);
 var options = {
-title: ‘My Daily Activities’
-};
-var chart = new google.visualization.PieChart(document.getElementById(‘chart_div’));
-chart.draw(data, options);
-}
+                        title: ‘My Daily Activities’
+                };
+                var chart = new google.visualization.PieChart(document.getElementById(‘chart_div’));
+                chart.draw(data, options);
+        }
 </script>
 
 'chart_div'
 
 <script type="text/javascript">
-function drawChart() {
-var data = new google.visualization.DataTable();
-7 | P a g e
-ENG0018 Computer Laboratory Dr Alifah Rahman 2025
-Lab H3 (week 3) Introduction to JavaScript
-data.addColumn('number', 'Age');
-data.addColumn('number', 'Salary');
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    7 | P a g e
+    ENG0018 Computer Laboratory Dr Alifah Rahman 2025
+    Lab H3 (week 3) Introduction to JavaScript
+    data.addColumn('number', 'Age');
+    data.addColumn('number', 'Salary');
  
-data.addRows([
-[25, 40000],
-[30, 50000],
-[35, 60000],
-[40, 75000],
-[45, 80000],
-[50, 90000]
-]);
-var options = {
-title: 'Age vs. Salary',
-hAxis: { title: 'Age' },
-vAxis: { title: 'Salary' }
-};
-var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-chart.draw(data, options);
-}
+    data.addRows([
+      [25, 40000],
+      [30, 50000],
+      [35, 60000],
+      [40, 75000],
+      [45, 80000],
+      [50, 90000]
+    ]);
+    var options = {
+      title: 'Age vs. Salary',
+      hAxis: { title: 'Age' },
+      vAxis: { title: 'Salary' }
+    };
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
 </script>
 
 
