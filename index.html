@@ -246,6 +246,55 @@ var options = {
 
 </head>
   
+<Consolidation task 1 chart>
+  'chart div'
+var chart = new google.visualization.PieChart(document.getElementById(‘chart_div’));
+                chart.draw(data, options);
+        }
+</script>
+
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0"></script>
+<body>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+const xValues = ["London","Birmingham","Edinburgh"];
+const yValues = [9648000, 1153900, 554000];
+const barColors = ["red", "green","blue"];
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    plugins: {
+      legend: {display: false},
+      title: {
+        display: true,
+        text: "Population in different cities of the Uk",
+        font: {size: 16}
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+</head>
+  
 
 
 
