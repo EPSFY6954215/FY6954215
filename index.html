@@ -308,7 +308,7 @@ therefore making the manufacturing more efficient.
         alert("Last modified time has been successfully verified from GitHub API.");
     }
     // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
+    // window.onload = getLastUpdatedTime;
 </script>
 
 
@@ -336,7 +336,14 @@ therefore making the manufacturing more efficient.
           "Total word count: " + total;
   }
 
-  window.onload = displayTotalWordCount;
+  // window.onload = displayTotalWordCount;
+</script>
+
+<script>
+   window.onload = function(){
+   displayTotalWordCount();
+   getLastUpdatedTime();  
+   }
 </script>
 
 </body>
