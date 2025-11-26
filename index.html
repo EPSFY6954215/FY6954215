@@ -130,7 +130,7 @@ h2 {
 <h3 id="Production of synthetic fuels">Production of synthetic fuels</h3>
 
 <P class="ex1">
-<pre id="Production of synthetic fuel_InText">
+<pre id="Production_of_synthetic_fuel_InText">
 The production of sustainable fuels breaks down to these processes: carbon capture, Electrolysis, syngas production, fuel synthesis and refining.
  
 C02 capture is coupled to a chemical reaction in a way that improves energy efficiency.
@@ -187,7 +187,7 @@ this means there's no additional infrastructure needed to fuel up vehicles as th
 
 <h3 id="Downsides and Competitors">Downsides and Competitors</h3>
 <P class="ex1">
-<pre id="Downsides and Competitors_InText">
+<pre id="Downsides_and_Competitors_InText">
 
 Currently the cost of synthetic fuel is about £3.80 per litre, This is a significant cost over the cost of petrol which is on average £1.63 per litre(Benjamin, 2023). 
 reasons for this expense are: the extra processes involved to produce the fuel such as using electrolysis which requires a significant amount of electricity, 
@@ -215,7 +215,7 @@ The outcome of this is 1.3 to 2 times more carbon dioxide emitted to produce EV 
 
 <h3 id="Potential solutions">Potential solutions</h3>
 <P class="ex1">
-<pre id="Potential solutions_InText">
+<pre id="Potential_solutions_InText">
 
 Due to the high cost of materials used for the production synthetic fuel, there are several researchers developing ways to reduce this, this includes: 
 
@@ -314,37 +314,41 @@ therefore making the manufacturing more efficient.
 
 
 
+<!-- ================= WORD COUNT DISPLAY ================= -->
+
 <script>
   function countWords(id) {
-      const text = document.getElementById(id).innerText.trim();
-      return text.split(/\s+/).length;
+      const text = document.getElementById(id).innerText.trim(); // Extract text from the element
+      return text.split(/\s+/).length;  // Split by whitespace and count the number of words
   }
 
   function displayTotalWordCount() {
+      // List of section IDs to count words from
       const sections = [
           "Introduction_InText",
-          "Production of synthetic fuel_InText",
-          "Benefits_Intext",
-          "Downsides and Competitors_InText",
-          "Potential solutions_InText",
+          "Production_of_synthetic_fuel_InText",
+          "Benefits_InText",
+          "Downsides_and_Competitors_InText",
+          "Potential_solutions_InText",
           "Conclusion_InText",
       ];
 
-      let total = 0;
-      sections.forEach(sec => total += countWords(sec));
+      let total = 0;  // Initialize the total word count to 0
+      sections.forEach(sec => {
+          const wordCount = countWords(sec); // Get word count for each section
+          total += wordCount;  // Add it to the total
+      });
 
+      // Display the total word count
       document.getElementById("totalWordCount").innerText =
-          "Total word count: " + total;
+          "Total word count = " + total;
   }
 
-  // window.onload = displayTotalWordCount;
-</script>
-
-<script>
-   window.onload = function(){
-   displayTotalWordCount();
-   getLastUpdatedTime();  
-   }
+  // Run the function once the window is fully loaded
+  window.onload = function() {
+      displayTotalWordCount();
+      getLastUpdatedTime();  // Assuming this function exists to show the last updated time
+  }
 </script>
 
 </body>
