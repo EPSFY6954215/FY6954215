@@ -357,6 +357,40 @@ therefore making the manufacturing more efficient.
 
 
 
+<!-- ================= WORD COUNT DISPLAY ================= -->
+
+<h3 style="text-align:center;">Word Count</h3>
+<p id="totalWordCount" style="text-align:center; font-size:18px;"></p>
+
+<script>
+  function countWords(id) {
+      const text = document.getElementById(id).innerText.trim();
+      return text.split(/\s+/).length;
+  }
+
+  function displayTotalWordCount() {
+      const sections = [
+          "Abstract_InText",
+          "Introduction_InText",
+          "Production_InText",
+          "Benefits_InText",
+          "Downsides_InText",
+          "Solutions_InText",
+          "Conclusion_InText"
+      ];
+
+      let total = 0;
+      sections.forEach(sec => total += countWords(sec));
+
+      document.getElementById("totalWordCount").innerText =
+          "Total word count: " + total;
+  }
+
+  window.onload = displayTotalWordCount;
+</script>
+
+</body>
+</html>
 
 
 
