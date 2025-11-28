@@ -319,43 +319,51 @@ therefore making the manufacturing more efficient.
 
 
 
-<!-- ================= WORD COUNT DISPLAY ================= -->
 
+
+ <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
 <script>
-  function countWords(id) {
-      const text = document.getElementById(id).innerText.trim(); // Extract text from the element
-      return text.split(/\s+/).length;  // Split by whitespace and count the number of words
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
   }
-
+  // Function to calculate and display total word count from selected sections
   function displayTotalWordCount() {
-      // List of section IDs to count words from
-      const sections = [
-          "Introduction_InText",
-          "Production_of_synthetic_fuel_InText",
-          "Benefits_InText",
-          "Downsides_and_Competitors_InText",
-          "Potential_solutions_InText",
-          "Conclusion_InText",
-      ];
-
-      let total = 0;  // Initialize the total word count to 0
-      sections.forEach(sec => {
-          const wordCount = countWords(sec); // Get word count for each section
-          total += wordCount;  // Add it to the total
-      });
-
-      // Display the total word count
-      document.getElementById("totalWordCount").innerText =
-          "Total word count = " + total;
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const ProdCount = displayWordCount("Production_of_synthetic_fuel_InText");
+    const BenCount = displayWordCount("Benefits_InText");
+    const DownCount = displayWordCount("Downsides_and_Competitors_InText");
+    const PotentialCount = displayWordCount("Potential_solutions_InText");
+    const ConCount = displayWordCount("Conclusion_InText"");
+    
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + ProdCount + BenCount + DownCount + PotentialCount + ConCount ;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
-
-  // Run the function once the window is fully loaded
-  window.onload = function() {
-      displayTotalWordCount();
-      getLastUpdatedTime();  // Assuming this function exists to show the last updated time
-  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
 </script>
 
+
+
+
+
+
+  
 </body>
 </html>
 
